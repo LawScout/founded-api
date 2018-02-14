@@ -4,7 +4,7 @@
 
 The Founded Node library provides access to the Founded and Auto Clerk APIs from applications written in server-side JavaScript.
 
-Please keep in mind that this package is for use with server-side Node that uses a Founded client token and api key.
+Please keep in mind that this package is for use with server-side Node that uses a Founded client token and a secret api key.
 
 ## Installation
 
