@@ -19,11 +19,11 @@ The package needs to be configured with your client token and api key
 ``` js
 const founded = require('founded-api')({ client: 'my-client-token', apiKey: 'my-api-key' });
 
-const orgData = {...}
+const orgData = {...} // see below for details
 
-founded.getOrganizationBundle(orgData).then(bundle => {
-    // write the pdf bundle to a file
-    fs.writeFile(`./bundle.pdf`, bundle, (error) => {
+// get company organization documents
+founded.getOrganizationBundle(orgData).then(pdf => {
+    fs.writeFile(`./organization-docs.pdf`, pdf, (error) => {
         if (error) {
             console.error(error)
         }
