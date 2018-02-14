@@ -10,7 +10,7 @@ Please keep in mind that this package is for use with server-side Node that uses
 
 Install the package with:
 
-    npm install founded-api
+    npm install @lawscout/founded-api
 
 ## Usage
 
