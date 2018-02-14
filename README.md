@@ -112,7 +112,7 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The director's first name
 | `lastName`         | String   | The director's last name
-| `address`          | Address  | The director's address. [See address type format](##address-data)
+| `address`          | Address  | The director's address. [See address type format](#address-data)
 | `canadianResident` | Boolean  | The director's Canadian residency
 
 ---
@@ -136,7 +136,7 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The officer's first name
 | `lastName`         | String   | The officer's last name
-| `address`          | Address  | The officer's address [See address type format](##address-data)
+| `address`          | Address  | The officer's address [See address type format](#address-data)
 | `positions`        | Array    | Array of officer position strings. ex: `President`, `Secretary`, `CEO`
 
 ---
@@ -160,7 +160,7 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The shareholder's first name
 | `lastName`         | String   | The shareholder's last name
-| `address`          | Address  | The shareholder's address [See address type format](##address-data)
+| `address`          | Address  | The shareholder's address [See address type format](#address-data)
 | `classes`          | Array    | Array of share class issuance objects. [See class issuance type format](#class-issuance-data)
 
 ---
