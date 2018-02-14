@@ -1,0 +1,28 @@
+{
+	"extends": [
+		"standard",
+		"plugin:node/recommended"
+	],
+	"plugins": [
+		"node",
+		"promise"
+	],
+	"env": {
+		"browser" : true
+	},
+	"globals": {
+		"__DEV__"      : false,
+		"__TEST__"     : false,
+		"__PROD__"     : false,
+		"__COVERAGE__" : false,
+		"rootRequire"  : true
+	},
+	"rules": {
+		"key-spacing"          : 0,
+		"max-len"              : [2, 160, 2],
+		"object-curly-spacing" : [2, "always"],
+		"indent": [2, "tab", { "SwitchCase": 1 }],
+		"no-tabs" : 0,
+		"no-var": 2
+	}
+}

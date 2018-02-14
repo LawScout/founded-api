@@ -1,0 +1,43 @@
+{
+  "name": "@lawscout/founded-api",
+  "version": "1.0.0",
+  "description": "Founded API Gateway",
+  "author": "Founded Technologies Inc.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LawScout/founded-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LawScout/founded-api/issues"
+  },
+  "homepage": "https://github.com/LawScout/founded-api#readme",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "pretest": "npm run lint",
+    "test": "mocha ./test/*.test.js",
+    "lint": "eslint lib test"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.0.0"
+  },
+  "dependencies": {
+    "request": "2.83.0",
+    "request-promise-native": "1.0.5"
+  }
+}
