@@ -58,10 +58,10 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | `date`             | String  | The date the company was incorporated. Use format `yyyy-mm-dd`
 | `companyName`      | String  | The name of the company
 | `fiscalYearEnd`    | String  | The month of which the last day is to be used as the fiscal year end. Use full month name ex: `December`
-| `registeredOffice` | Address | The companies registered address. [See address type format](#address-data-format)
-| `directors`        | Array   | An array of all company directors. [See director type format](#director-data-format)
-| `officers`         | Array   | An array of all company officers. At least 1 `President` is required. [See officer type format](#officer-data-format)
-| `shareholders`     | Array   | An array of all shareholders. At least 1 `voting` shareholder is required. [See shareholder type format](#shareholder-data-format)
+| `registeredOffice` | Address | The companies registered address. [See address type format](#address-data)
+| `directors`        | Array   | An array of all company directors. [See director type format](#director-data)
+| `officers`         | Array   | An array of all company officers. At least 1 `President` is required. [See officer type format](#officer-data)
+| `shareholders`     | Array   | An array of all shareholders. At least 1 `voting` shareholder is required. [See shareholder type format](#shareholder-data)
 
 ---
 
@@ -112,7 +112,7 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The director's first name
 | `lastName`         | String   | The director's last name
-| `address`          | Address  | The director's address. [See address type format](##address-data-format)
+| `address`          | Address  | The director's address. [See address type format](##address-data)
 | `canadianResident` | Boolean  | The director's Canadian residency
 
 ---
@@ -136,7 +136,7 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The officer's first name
 | `lastName`         | String   | The officer's last name
-| `address`          | Address  | The officer's address [See address type format](##address-data-format)
+| `address`          | Address  | The officer's address [See address type format](##address-data)
 | `positions`        | Array    | Array of officer position strings. ex: `President`, `Secretary`, `CEO`
 
 ---
@@ -160,8 +160,8 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | ------------------ |:--------:| -----------
 | `firstName`        | String   | The shareholder's first name
 | `lastName`         | String   | The shareholder's last name
-| `address`          | Address  | The shareholder's address [See address type format](##address-data-format)
-| `classes`          | Array    | Array of share class issuance objects. [See class issuance type format](#class-issuance-data-format)
+| `address`          | Address  | The shareholder's address [See address type format](##address-data)
+| `classes`          | Array    | Array of share class issuance objects. [See class issuance type format](#class-issuance-data)
 
 ---
 
@@ -185,11 +185,11 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 | `name`       | String          | The name of the share class. ex. `A`, `B`, etc
 | `total`      | Number          | The total number of shares issued of this class type
 | `price`      | Address         | The total price paid for these shares
-| `properties` | ClassProperties | The class properties of this share class. [See class properties type format](#class-properties-data-format)
+| `properties` | ClassProperties | The class properties of this share class. [See class properties type format](#class-properties-data)
 
 ---
 
-### Class Properties Data Format
+### Class Properties Data
 
 #### Example
 
