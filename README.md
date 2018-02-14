@@ -19,11 +19,11 @@ The package needs to be configured with your client token and api key
 ``` js
 const founded = require('founded-api')({ client: 'my-client-token', apiKey: 'my-api-key' });
 
-const orgData = {...}
+const orgData = {...} // see below for details
 
-founded.getOrganizationBundle(orgData).then(bundle => {
-    // write the pdf bundle to a file
-    fs.writeFile(`./bundle.pdf`, bundle, (error) => {
+// get company organization documents
+founded.getOrganizationBundle(orgData).then(pdf => {
+    fs.writeFile(`./organization-docs.pdf`, pdf, (error) => {
         if (error) {
             console.error(error)
         }
@@ -35,73 +35,181 @@ founded.getOrganizationBundle(orgData).then(bundle => {
 
 ## Data Requirements
 
-### Organization Data Format
+### Organization Bundle Data
+
+#### Example
+
+``` js
+{
+    date: '2018-2-14',
+    companyName: 'Beatles Shipping Inc.',
+    fiscalYearEnd: 'December',
+    registeredOffice: <address>,
+    directors: [<director>],
+    officers: [<officer>],
+    shareholders: [<shareholder>]
+}
+```
+
+#### Format
 
 | Key                | Type    | Description
 | ------------------ |:-------:| -----------
-| `date`             | String  | The date the company was incorporated. Use format `yyyy-mm-dd`.
-| `companyName`      | String  | The name of the company.
+| `date`             | String  | The date the company was incorporated. Use format `yyyy-mm-dd`
+| `companyName`      | String  | The name of the company
 | `fiscalYearEnd`    | String  | The month of which the last day is to be used as the fiscal year end. Use full month name ex: `December`
-| `registeredOffice` | Address | The companies registered address. [See address type format](#address-data-format)
-| `directors`        | Array   | An array of all company directors. [See director type format](#director-data-format)
-| `officers`         | Array   | An array of all company officers. At least 1 `President` is required. [See officer type format](#officer-data-format)
-| `shareholders`     | Array   | An array of all shareholders. At least 1 voting shareholder is required. [See shareholder type format](#shareholder-data-format)
+| `registeredOffice` | Address | The companies registered address. [See address type format](#address-data)
+| `directors`        | Array   | An array of all company directors. [See director type format](#director-data)
+| `officers`         | Array   | An array of all company officers. At least 1 `President` is required. [See officer type format](#officer-data)
+| `shareholders`     | Array   | An array of all shareholders. At least 1 `voting` shareholder is required. [See shareholder type format](#shareholder-data)
 
-### Address Data Format
+---
+
+### Address Data
+
+#### Example
+
+``` js
+{
+    street1: '123 Dundas St',
+    street2: 'Apt 5',
+    city: 'Toronto',
+    region: 'ON',
+    country: 'Canada',
+    postalCode: 'M4M 4B7'
+}
+```
+
+#### Format
 
 | Key          | Type    | Description
 | ------------ |:-------:| -----------
-| `street1`    | String  | Line 1 of the address.
-| `street2`    | String  | Line 2 of the address.
-| `city`       | String  | The city or town of the address.
-| `region`     | String  | The province or state or region of the address.
-| `country`    | String  | The country of the address.
-| `postalCode` | String  | The postal code of zip code of the address.
+| `street1`    | String  | Line 1 of the address
+| `street2`    | String  | Line 2 of the address
+| `city`       | String  | The city or town of the address
+| `region`     | String  | The province or state or region of the address.  Please use region short codes. ie. `ON`, `AB`, `QC`, etc.
+| `country`    | String  | The country of the address
+| `postalCode` | String  | The postal code of zip code of the address
 
-### Director Data Format
+---
+
+### Director Data
+
+#### Example
+
+``` js
+{
+    firstName: 'John',
+    lastName: 'Lennon',
+    address: <address>,
+    canadianResident: true
+}
+```
+
+#### Format
 
 | Key                | Type     | Description
 | ------------------ |:--------:| -----------
-| `firstName`        | String   | The director's first name.
-| `lastName`         | String   | The director's last name.
-| `address`          | Address  | The director's address.
-| `canadianResident` | Boolean  | The director's Canadian residency.
+| `firstName`        | String   | The director's first name
+| `lastName`         | String   | The director's last name
+| `address`          | Address  | The director's address. [See address type format](#address-data)
+| `canadianResident` | Boolean  | The director's Canadian residency
 
-### Officer Data Format
+---
+
+### Officer Data
+
+#### Example
+
+``` js
+{
+    firstName: 'John',
+    lastName: 'Lennon',
+    address: <address>,
+    positions: ['President', 'CEO']
+}
+```
+
+#### Format
 
 | Key                | Type     | Description
 | ------------------ |:--------:| -----------
-| `firstName`        | String   | The director's first name.
-| `lastName`         | String   | The director's last name.
-| `address`          | Address  | The director's address.
+| `firstName`        | String   | The officer's first name
+| `lastName`         | String   | The officer's last name
+| `address`          | Address  | The officer's address [See address type format](#address-data)
 | `positions`        | Array    | Array of officer position strings. ex: `President`, `Secretary`, `CEO`
 
-### Shareholder Data Format
+---
+
+### Shareholder Data
+
+#### Example
+
+``` js
+{
+    firstName: 'John',
+    lastName: 'Lennon',
+    address: <address>,
+    classes: [<class_issuance>]
+}
+```
+
+#### Format
 
 | Key                | Type     | Description
 | ------------------ |:--------:| -----------
-| `firstName`        | String   | The director's first name.
-| `lastName`         | String   | The director's last name.
-| `address`          | Address  | The director's address.
-| `classes`          | Array    | Array of share class issuance objects. [See class issuance type format](#class-issuance-data-format)
+| `firstName`        | String   | The shareholder's first name
+| `lastName`         | String   | The shareholder's last name
+| `address`          | Address  | The shareholder's address [See address type format](#address-data)
+| `classes`          | Array    | Array of share class issuance objects. [See class issuance type format](#class-issuance-data)
 
-### Class Issuance Data Format
+---
+
+### Class Issuance Data
+
+#### Example
+
+``` js
+{
+    name: 'A',
+    total: 1000,
+    price: 250.00
+    properties: <class_properties>
+}
+```
+
+#### Format
 
 | Key          | Type            | Description
 | ------------ |:---------------:| -----------
-| `name`       | String          | The name of the share class. ex. `A`, `B`, etc.
-| `total`      | Number          | The total number of shares issued of this class type.
-| `price`      | Address         | The total price paid for these shares.
-| `properties` | ClassProperties | The class properties of this share class. [See class properties type format](#class-properties-data-format)
+| `name`       | String          | The name of the share class. ex. `A`, `B`, etc
+| `total`      | Number          | The total number of shares issued of this class type
+| `price`      | Address         | The total price paid for these shares
+| `properties` | ClassProperties | The class properties of this share class. [See class properties type format](#class-properties-data)
 
-### Class Properties Data Format
+---
+
+### Class Properties Data
+
+#### Example
+
+``` js
+{
+    voting: true,
+    preferred: true
+}
+```
+
+#### Format
 
 | Key         | Type    | Description
 | ----------- |:-------:| -----------
 | `voting`    | Boolean | True if the class is a voting class.
 | `preferred` | Boolean | True if the class is a preferred class.
 
-### Organization Example Data
+---
+
+## Full Organization Example Data
 
 ``` js
 {
