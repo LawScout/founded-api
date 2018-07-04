@@ -41,7 +41,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 
 ``` js
 {
-    date: '2018-2-14',
+    date: '2018-02-14',
     companyName: 'Beatles Shipping Inc.',
     fiscalYearEnd: 'December',
     registeredOffice: <address>,
