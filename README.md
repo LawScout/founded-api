@@ -4,7 +4,7 @@
 
 The Founded Node library provides access to the Founded and Auto Clerk APIs from applications written in server-side JavaScript.
 
-Please keep in mind that this package is for use with server-side Node that uses a Founded client token and a secret api key.
+Please keep in mind that this package is for use with server-side Node and required either a development or production api key.
 
 ## Installation
 
@@ -14,12 +14,12 @@ Install the package with:
 
 ## Usage
 
-The package needs to be configured with your client token and api key
+The package needs to be configured with your api key.  Only use your production key in a production environment as you will be billed per bundle generated. Using a development key allows development and testing of all methods without incurring additional cost however all generated documents will be watermarked specimen.
 
 ``` js
-const founded = require('founded-api')({ client: 'my-client-token', apiKey: 'my-api-key' });
+const founded = require('founded-api')({ apiKey: 'my-api-key' });
 
-const orgData = {...} // see below for details
+const orgData = {...} // see documentation below for details
 
 // get company organization documents
 founded.getOrganizationBundle(orgData).then(pdf => {
