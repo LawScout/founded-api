@@ -43,6 +43,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 {
     date: '2018-02-14',
     companyName: 'Beatles Shipping Inc.',
+    federal: true,
     fiscalYearEnd: 'December',
     registeredOffice: <address>,
     directors: [<director>],
@@ -57,8 +58,9 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 | ------------------ |:-------:| -----------
 | `date`             | String  | The date the company was incorporated. Use format `yyyy-mm-dd`
 | `companyName`      | String  | The name of the company
+| `federal`          | Boolean | A boolean indicating if the company is a federal company. If the company is not federal the province of the registered office will be assumed to be the incorporating province.
 | `fiscalYearEnd`    | String  | The month of which the last day is to be used as the fiscal year end. Use full month name ex: `December`
-| `registeredOffice` | Address | The companies registered address. [See address type format](#address-data)
+| `registeredOffice` | Address | The companies registered address. The province of the registered address will determine what type of organizational docs to prepare. [See address type format](#address-data)
 | `directors`        | Array   | An array of all company directors. [See director type format](#director-data)
 | `officers`         | Array   | An array of all company officers. At least 1 `President` is required. [See officer type format](#officer-data)
 | `shareholders`     | Array   | An array of all shareholders. At least 1 `voting` shareholder is required. [See shareholder type format](#shareholder-data)
@@ -87,7 +89,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 | `street1`    | String  | Line 1 of the address
 | `street2`    | String  | Line 2 of the address
 | `city`       | String  | The city or town of the address
-| `region`     | String  | The province or state or region of the address.  Please use region short codes. ie. `ON`, `AB`, `QC`, etc.
+| `region`     | String  | The province or state or region of the address.  Please use region short codes. ie. `AB`, `BC`, `ON`, `QC`, etc.
 | `country`    | String  | The country of the address
 | `postalCode` | String  | The postal code of zip code of the address
 
