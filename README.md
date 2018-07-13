@@ -2,9 +2,9 @@
 
 # Founded Node.js Library
 
-The Founded Node library provides access to the Founded and Auto Clerk APIs from applications written in server-side JavaScript.
+The Founded Node.js library provides access to the Founded and Auto Clerk APIs from applications written in server-side JavaScript.
 
-Please keep in mind that this package is for use with server-side Node and required either a development or production api key.
+Please keep in mind that this package is only for use with server-side Node and requires either a development or production api key.
 
 ## Installation
 
