@@ -2,7 +2,7 @@
 
 # Founded Node.js Library
 
-[![Founded API NPM](https://img.shields.io/npm/v/@lawscout/founded-api.svg)](https://www.npmjs.com/package/@lawscout/founded-api)
+[![Founded API NPM](https://img.shields.io/npm/v/@lawscout/founded-api.svg)](https://www.npmjs.com/package/@lawscout/founded-api) ![License](https://img.shields.io/npm/l/@lawscout/founded-api.svg)
 
 The Founded Node.js library provides access to the Founded and Auto Clerk APIs from applications written in server-side JavaScript.
 
