@@ -89,7 +89,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 | Key          | Type    | Required | Description
 | ------------ |:-------:| :------: | -----------
 | `street1`    | String  | Yes      | Line 1 of the address. Ex. `10 Dundas St E`
-| `street2`    | String  | No       | Line 2 of the address. Ex. `Unit 1001`
+| `street2`    | String  | Yes       | Line 2 of the address. Ex. `Unit 1001`. *Note: Line 2 can be an empty string*
 | `city`       | String  | Yes      | The city or town of the address
 | `region`     | String  | Yes      | The province or state or region of the address.  *Note: use region short codes. ex. `AB`, `BC`, `ON`, `QC`, etc.*
 | `country`    | String  | Yes      | The full country name of the address. *Note: Use full country names. ex. `Canada`, `United States`, `Australia`, etc.*
