@@ -58,7 +58,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 
 | Key                | Type    | Required | Description
 | ------------------ |:-------:| :------: | -----------
-| `date`             | String  | Yes      | The date the company was incorporated. Use format `yyyy-mm-dd`
+| `date`             | String  | Yes      | The date to be used as the date of organization. This date should not be before the date of incorporation. Use format `yyyy-mm-dd`
 | `companyName`      | String  | Yes      | The name of the company
 | `federal`          | Boolean | No       | A boolean indicating if the company is a federal company. If this parameter is not provided it will be treated as if `false` was set. *Note 1: If the company is not federal the province of the registered office will be assumed to be the incorporating province. Note 2: Federal companies are required to have 25% Canadian resident directors.*
 | `fiscalYearEnd`    | String  | Yes      | The month of which the last day is to be used as the fiscal year end. Use full month name ex: `December`
