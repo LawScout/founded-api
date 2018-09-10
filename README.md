@@ -26,7 +26,7 @@ const founded = require('founded-api')({ apiKey: 'my-api-key' });
 
 ---
 
-## Overview
+## Method Overview
 
 ### getOrganizationBundle
 Generate a bundle of company organization documents.
