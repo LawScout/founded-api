@@ -26,6 +26,18 @@ const founded = require('founded-api')({ apiKey: 'my-api-key' });
 
 ---
 
+## Overview
+
+### getOrganizationBundle
+Generate a bundle of company organization documents.
+
+### parseArticles
+Parse out company name, corporation number and incorporate date from Articles of Incorporation pdfs for various jurisdictions.
+
+
+
+---
+
 ## Organization Documents Bundle
 
 ### example:
