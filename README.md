@@ -18,6 +18,18 @@ Install the package with:
 
 The package needs to be configured with your api key.  Only use your production key in a production environment as you will be billed per bundle generated. Using a development key allows development and testing of all methods without incurring additional cost however all generated documents will be watermarked specimen.
 
+### example:
+
+``` js
+const founded = require('founded-api')({ apiKey: 'my-api-key' });
+```
+
+---
+
+## Organization Documents Bundle
+
+### example:
+
 ``` js
 const founded = require('founded-api')({ apiKey: 'my-api-key' });
 
@@ -33,11 +45,10 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 }).catch(error => {
     console.error(error)
 })
+
 ```
 
-## Data Requirements
-
-### Organization Bundle Data
+### Bundle Data Details
 
 #### Example
 
@@ -213,7 +224,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 
 ---
 
-## Full Organization Example Data
+### Full Organization Example Data
 
 ``` js
 {
@@ -366,3 +377,40 @@ founded.getOrganizationBundle(orgData).then(pdf => {
     }]
 }
 ```
+
+---
+
+## Articles of Incorporation Parsing
+
+### example:
+
+``` js
+const founded = require('founded-api')({ apiKey: 'my-api-key' });
+
+const juridictionKey = 'BC'
+const localPathToArticlesPDF = 'path/to/bc-articles.pdf'
+
+// parse articles of incorporation documents
+founded.parseArticles(jurisdictionKey, localPathToArticlesPDF).then(results => {
+    // results will be an object like the following
+    // {
+    //     corporationName:"xxxxxxxx Ontario Inc.",
+    //     corporationNumber:"xxxxxxx",
+    //     incorporationDate:"2018-09-01"
+    // }
+    console.info(results)
+}).catch(error => {
+    console.error(error)
+})
+```
+
+### Details
+
+Supported juriditions are as follows:
+
+| Juridiction        | Key 
+| ------------------ | ---
+| `Federal`          | CA
+| `Alberta`          | AB
+| `British Columbia` | BC
+| `Ontario`          | ON
