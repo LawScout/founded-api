@@ -164,7 +164,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 | `firstName`        | String  | Yes      | The officer's first name
 | `lastName`         | String  | Yes      | The officer's last name
 | `address`          | Address | Yes      | The officer's address [See address type format](#address-data)
-| `positions`        | Array   | Yes      | Array of officer position strings. ex: `President`, `Secretary`, `CEO`. *Note: All corporations are required to have both a President and a Secretary*
+| `positions`        | Array   | Yes      | Array of officer position strings. ex: `President`, `Secretary`, `CEO`. *Note: All corporations are required to have a President*
 
 ---
 
