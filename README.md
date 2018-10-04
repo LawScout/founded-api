@@ -140,7 +140,7 @@ founded.getOrganizationBundle(orgData).then(pdf => {
 | `firstName`        | String  | Yes      | The director's first name
 | `lastName`         | String  | Yes      | The director's last name
 | `address`          | Address | Yes      | The director's address. [See address type format](#address-data)
-| `canadianResident` | Boolean | No      | The director's Canadian residency. *Note: Canadian residency status is only required for Federal corporations and can be ignored for provincial corporations*
+| `canadianResident` | Boolean | No       | The director's Canadian residency. *Note: Canadian residency status is not required for BC provincial corporations.*
 
 ---
 
